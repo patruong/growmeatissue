@@ -15,7 +15,7 @@ def add_cluster(
         [x.genome.get_gene_count()[np.newaxis, :] for x in population]
     )
     cluster = AgglomerativeClustering(
-        n_clusters=n_clusters, affinity="euclidean", linkage="ward"
+        n_clusters=n_clusters, metric="euclidean", linkage="ward"
     )
 
     idx = cluster.fit_predict(genome_profile)
